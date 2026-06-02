@@ -1,0 +1,28 @@
+---
+import { policies } from '../data/site';
+---
+<section class="shipping section" id="enviaments">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-kicker">Informació útil</p>
+        <h2>Enviaments i devolucions</h2>
+      </div>
+    </div>
+    <div class="policy-grid">
+      {policies.map((policy, index) => (
+        <article class="policy-card reveal" style={`--delay:${index * 90}ms`}>
+          <div class="policy-image">
+            <img src={policy.image} alt={`${policy.title} Catarinetes`} loading="lazy" />
+          </div>
+          <div class="policy-content">
+            <h3>{policy.title}</h3>
+            <ul>
+              {policy.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

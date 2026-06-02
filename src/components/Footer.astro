@@ -1,0 +1,14 @@
+---
+import { business } from '../data/site';
+---
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© 2026 {business.name}</span>
+    <div class="footer-links">
+      <a href={business.instagram} target="_blank" rel="noopener">Instagram</a>
+      <a href="#inici">Tornar amunt</a>
+    </div>
+  </div>
+</footer>
+<a class="floating-call" href={`tel:${business.phone}`}>Trucar</a>
+<script is:inline src="/scripts/main.js"></script>

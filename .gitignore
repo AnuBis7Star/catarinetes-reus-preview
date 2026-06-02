@@ -1,11 +1,5 @@
-# macOS / system files
+node_modules/
+dist/
+.astro/
 .DS_Store
-__MACOSX/
-._*
-
-# Editor folders
-.vscode/
-.idea/
-
-# Temporary files
-*.log
+.env

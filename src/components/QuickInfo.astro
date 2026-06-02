@@ -1,0 +1,13 @@
+---
+import { quickInfo } from '../data/site';
+---
+<section class="quick-info" aria-label="Informació essencial">
+  <div class="container quick-grid">
+    {quickInfo.map((item) => (
+      <article>
+        <span>{item.label}</span>
+        <strong>{item.value}</strong>
+      </article>
+    ))}
+  </div>
+</section>

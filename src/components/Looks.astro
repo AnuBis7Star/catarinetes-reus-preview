@@ -1,0 +1,33 @@
+---
+import { business, looks } from '../data/site';
+---
+<section class="looks section" id="looks">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="section-kicker">Looks destacats</p>
+        <h2>Novetats i inspiració</h2>
+      </div>
+      <a class="text-link" href={business.instagram} target="_blank" rel="noopener">Veure Instagram</a>
+    </div>
+
+    <div class="product-grid">
+      {looks.map((look, index) => (
+        <article class="product-card reveal" style={`--delay:${Math.min(index, 5) * 70}ms`}>
+          <a class="product-image" href={look.image} target="_blank" rel="noopener">
+            <img src={look.image} alt={look.alt} loading="lazy" />
+          </a>
+          <div class="product-body">
+            <span class="tag">{look.tag}</span>
+            <h3>{look.title}</h3>
+            <p>{look.description}</p>
+            <div class="product-footer">
+              <span>Consulta talles i disponibilitat</span>
+              <a href={business.instagram} target="_blank" rel="noopener">Demanar</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

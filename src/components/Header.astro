@@ -1,0 +1,21 @@
+---
+import { business, navItems } from '../data/site';
+---
+<header class="site-header" data-header>
+  <nav class="container nav" aria-label="Navegació principal">
+    <a class="brand" href="#inici" aria-label={business.name}>
+      <img src={business.logo} alt={business.shortName} />
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-menu-toggle>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Obrir menú</span>
+    </button>
+
+    <div class="nav-links" id="nav-links" data-nav-links>
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a class="nav-cta" href={business.instagram} target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </nav>
+</header>

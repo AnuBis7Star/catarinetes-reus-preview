@@ -1,0 +1,29 @@
+---
+import { business } from '../data/site';
+---
+<section class="hero" id="inici">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">{business.address}</p>
+      <h1>Moda de dona amb tracte proper.</h1>
+      <p class="lead">{business.description}</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#looks">Veure looks</a>
+        <a class="btn secondary" href={`tel:${business.phone}`}>Trucar</a>
+      </div>
+      <div class="info-pills" aria-label="Informació ràpida">
+        <span>Dilluns a dissabte</span>
+        <span>10.00–13.30 · 17.00–20.30 h</span>
+        <span>Enviaments gratuïts a partir de 120 €</span>
+      </div>
+    </div>
+
+    <div class="hero-media reveal delay-1">
+      <img src={business.heroImage} alt="Look destacat de Catarinetes" />
+      <div class="floating-card">
+        <span>Des de 2001</span>
+        <strong>Essència, renovació i comerç proper</strong>
+      </div>
+    </div>
+  </div>
+</section>

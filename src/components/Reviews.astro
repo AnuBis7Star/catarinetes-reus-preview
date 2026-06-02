@@ -1,0 +1,21 @@
+---
+import { reviews } from '../data/site';
+---
+<section class="reviews section" aria-label="Opinions de clientes">
+  <div class="container">
+    <div class="section-head centered reveal">
+      <div>
+        <p class="section-kicker">Opinions</p>
+        <h2>El valor d’una botiga de confiança.</h2>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      {reviews.map((review, index) => (
+        <article class="review-card reveal" style={`--delay:${index * 80}ms`}>
+          <p>“{review.quote}”</p>
+          <span>{review.author}</span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+---
+import { services } from '../data/site';
+---
+<section class="services section" id="serveis">
+  <div class="container">
+    <div class="section-head centered reveal">
+      <div>
+        <p class="section-kicker">Què trobaràs</p>
+        <h2>Més que roba: una experiència de botiga propera.</h2>
+      </div>
+    </div>
+    <div class="services-grid">
+      {services.map((service, index) => (
+        <article class="service-card reveal" style={`--delay:${index * 80}ms`}>
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+import { business } from '../data/site';
+---
+<section class="contact section" id="contacte">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <p class="section-kicker">Contacte</p>
+      <h2>Visita’ns o consulta una peça.</h2>
+      <p>Per talles, disponibilitat o reserves, contacta amb la botiga o visita’ns al centre de Reus.</p>
+      <div class="contact-actions">
+        <a class="btn primary" href={`tel:${business.phone}`}>Trucar al {business.phoneLabel}</a>
+        <a class="btn dark" href={business.instagram} target="_blank" rel="noopener">Enviar missatge a Instagram</a>
+      </div>
+      <div class="contact-details">
+        <p><strong>Adreça:</strong> {business.address}</p>
+        <p><strong>Horari:</strong> {business.hours}</p>
+        <p><strong>Enviaments:</strong> gratuïts a partir de 120 €</p>
+      </div>
+    </div>
+    <div class="map-card reveal delay-1">
+      <iframe title="Mapa de Catarinetes Reus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src={business.mapsUrl}></iframe>
+    </div>
+  </div>
+</section>

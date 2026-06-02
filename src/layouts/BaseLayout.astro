@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import { business } from '../data/site';
+
+const { title = `${business.name} · ${business.tagline}`, description = business.description } = Astro.props;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ClothingStore',
+  name: business.name,
+  description,
+  address: business.address,
+  telephone: business.phone,
+  url: Astro.site?.toString() ?? 'https://example.com',
+  sameAs: [business.instagram],
+};
+---
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fff7ee" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
