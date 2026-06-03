@@ -1,3 +1,4 @@
+document.documentElement.classList.add('js');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const navLinks = document.querySelector('[data-nav-links]');
 const header = document.querySelector('[data-header]');

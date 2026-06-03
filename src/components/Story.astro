@@ -1,10 +1,13 @@
 ---
 import { business } from '../data/site';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const asset = (path) => `${base}${path.replace(/^\//, '')}`;
 ---
 <section class="story section" id="botiga">
   <div class="container story-grid">
     <div class="story-image reveal">
-      <img src={business.storyImage} alt="Història de Catarinetes" loading="lazy" />
+      <img src={asset(business.storyImage)} alt="Història de Catarinetes" loading="lazy" />
     </div>
     <div class="story-copy reveal delay-1">
       <p class="section-kicker">La botiga</p>

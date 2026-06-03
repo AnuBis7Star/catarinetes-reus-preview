@@ -1,5 +1,8 @@
 ---
 import { business } from '../data/site';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const asset = (path) => `${base}${path.replace(/^\//, '')}`;
 ---
 <section class="hero" id="inici">
   <div class="container hero-grid">
@@ -19,7 +22,7 @@ import { business } from '../data/site';
     </div>
 
     <div class="hero-media reveal delay-1">
-      <img src={business.heroImage} alt="Look destacat de Catarinetes" />
+      <img src={asset(business.heroImage)} alt="Look destacat de Catarinetes" />
       <div class="floating-card">
         <span>Des de 2001</span>
         <strong>Essència, renovació i comerç proper</strong>

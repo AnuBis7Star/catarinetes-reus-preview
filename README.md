@@ -1,6 +1,6 @@
 # Catarinetes Reus - Astro Website
 
-Upgraded Astro version of the Catarinetes Reus static website.
+Astro version of the Catarinetes Reus website.
 
 ## Run locally
 
@@ -9,31 +9,38 @@ npm install
 npm run dev
 ```
 
-Open the local Astro URL, usually:
-
-```text
-http://localhost:4321
-```
-
-## Build for Hostinger
+## Build locally
 
 ```bash
 npm run build
+npm run preview
 ```
 
-Upload the **contents of `dist/`** to Hostinger `public_html`.
+## GitHub Pages
+
+This project is configured for GitHub Pages at:
+
+```txt
+https://anubis7star.github.io/catarinetes-reus-preview/
+```
+
+Important files:
+
+- `astro.config.mjs` includes the correct `site` and `base` for GitHub Pages.
+- `.github/workflows/deploy.yml` builds Astro and deploys the generated `dist/` folder.
+- Image and script paths are handled with `import.meta.env.BASE_URL`, so they work inside the GitHub Pages subfolder.
 
 ## Images
 
-Add your image files manually inside:
+Place images inside:
 
-```text
+```txt
 public/assets/img/
 ```
 
 Expected filenames:
 
-```text
+```txt
 logo-catarinetes-crop.jpg
 logo-catarinetes.jpg
 historia-catarinetes.png
@@ -47,22 +54,14 @@ enviaments.jpg
 devolucions.jpg
 ```
 
-The site references those filenames from `src/data/site.ts`.
+## Hostinger deployment
 
-## Main files to edit
-
-```text
-src/data/site.ts          Business info, looks, policies, reviews
-src/pages/index.astro     Page order
-src/styles/global.css     Design system and layout
-src/components/           Reusable page sections
-```
-
-## Recommended workflow
+For Hostinger, run:
 
 ```bash
-npm run dev
-# edit files
 npm run build
-# upload dist/ to Hostinger
 ```
+
+Then upload the contents of `dist/` to `public_html/`.
+
+If you deploy to a normal root domain on Hostinger, remove or change the `base` value in `astro.config.mjs` before building for Hostinger.

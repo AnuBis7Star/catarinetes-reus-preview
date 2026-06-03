@@ -1,5 +1,8 @@
 ---
 import { policies } from '../data/site';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const asset = (path) => `${base}${path.replace(/^\//, '')}`;
 ---
 <section class="shipping section" id="enviaments">
   <div class="container">
@@ -13,7 +16,7 @@ import { policies } from '../data/site';
       {policies.map((policy, index) => (
         <article class="policy-card reveal" style={`--delay:${index * 90}ms`}>
           <div class="policy-image">
-            <img src={policy.image} alt={`${policy.title} Catarinetes`} loading="lazy" />
+            <img src={asset(policy.image)} alt={`${policy.title} Catarinetes`} loading="lazy" />
           </div>
           <div class="policy-content">
             <h3>{policy.title}</h3>
