@@ -73,14 +73,16 @@ button, input, textarea { font: inherit; }
   align-items: center;
   text-decoration: none;
 }
+
 .brand img {
   width: 170px;
   height: 64px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--white);
+  padding: 8px 18px;
 }
 .nav-links {
   display: flex;
@@ -630,7 +632,7 @@ h3 { line-height: 1.12; }
   .container { width: min(100% - 22px, 1160px); }
   .section { padding: 64px 0; }
   .hero { padding: 56px 0 46px; }
-  .brand img { width: 140px; height: 56px; }
+  .brand img { width: 140px; height: 56px; padding: 7px 14px; }
   .quick-grid,
   .product-grid,
   .policy-grid,

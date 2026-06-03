@@ -11,7 +11,7 @@ export const business = {
   hours: 'Dilluns a dissabte · 10.00–13.30 h / 17.00–20.30 h',
   instagram: 'https://www.instagram.com/catarinetes_reus/',
   mapsUrl: 'https://www.google.com/maps?q=C%2F%20Jes%C3%BAs%2C%20Reus&output=embed',
-  logo: 'assets/img/logo-catarinetes-crop.jpg',
+  logo: 'assets/img/catarinetes_text.png',
   storyImage: 'assets/img/historia-catarinetes.png',
   heroImage: 'assets/img/look-verd.jpg',
 };
