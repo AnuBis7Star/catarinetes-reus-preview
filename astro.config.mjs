@@ -1,7 +1,6 @@
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: 'https://example.com',
-  integrations: [sitemap()],
+  site: "https://anubis7star.github.io",
+  base: "/catarinetes-reus-preview",
 });
